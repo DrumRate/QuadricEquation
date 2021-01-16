@@ -27,12 +27,12 @@ namespace QuadraticEquation
             {
                 x1 = (-b + Math.Sqrt(D)) / (2 * a);
                 x2 = (-b - Math.Sqrt(D)) / (2 * a);
-                Console.WriteLine($"x1= {x1}\nx2= {x2}");
+                Console.WriteLine($"x1= {Math.Round(x1, 3)}\nx2= {Math.Round(x2, 3)}\n");
             }
 
             else
             {
-                Console.WriteLine("Действительных корней нет");
+                Console.WriteLine("Действительных корней нет\n");
             }
         }
 
@@ -40,7 +40,7 @@ namespace QuadraticEquation
         {
             x0 = -b / (2d * a);
             double y0 = a * Math.Pow(x0, 2) + b * x0 + c;
-            Console.WriteLine($"S({x0};{y0})");
+            Console.WriteLine($"S({Math.Round(x0, 3)};{Math.Round(y0, 3)})\n");
         }
 
         public void CalculateIntervals()
@@ -57,12 +57,12 @@ namespace QuadraticEquation
 
             if (!isGrowing.HasValue)
             {
-                Console.WriteLine("Функция линейна");
+                Console.WriteLine("Функция линейна\n");
             }
             else
             {
                 Console.WriteLine(String.Format("Функция на промежутке [-infinity; {0}) {1}," +
-                    " на промежутке ( {2}; +infinity] {3}",x0, isGrowing.Value ? down : up, x0,  isGrowing.Value ? up : down));
+                    " на промежутке ( {2}; +infinity] {3}\n\n", Math.Round(x0, 3), isGrowing.Value ? down : up, Math.Round(x0, 3),  isGrowing.Value ? up : down));
             }
         }
     }
